@@ -20,6 +20,9 @@ public class COMPILATION {
 		bar.add(nestedIfElse);
 		
 		//BASIC INPUT AND OUTPUT (5)
+		//---------------------------------------------------------------------------------------------------------------
+		//---------------------------------------------------------------------------------------------------------------
+		//---------------------------------------------------------------------------------------------------------------
 		
 		//PROGRAM 1
 		JMenuItem b1item = new JMenuItem("Basic Print");
@@ -258,9 +261,12 @@ public class COMPILATION {
 		});
 		
 		//NESTED IF-ELSE (5)
+		//---------------------------------------------------------------------------------------------------------------
+		//---------------------------------------------------------------------------------------------------------------
+		//---------------------------------------------------------------------------------------------------------------
 		
 		//PROGRAM 1
-		JMenuItem n1item = new JMenuItem("GRADES CALCULATOR");
+		JMenuItem n1item = new JMenuItem("Grades Calculator");
 		nestedIfElse.add(n1item);
 		
 		JPanel n1panel = new JPanel();
@@ -306,11 +312,15 @@ public class COMPILATION {
 		n1panel.add(n1field5);
 		n1field5.setBounds(300, 270, 200, 40);
 		
-		JButton n1button = new JButton("Calculate");
-		n1panel.add(n1button);
-		n1button.setBounds(200, 340, 150, 50);
+		JButton n1button1 = new JButton("Calculate");
+		n1panel.add(n1button1);
+		n1button1.setBounds(200, 340, 150, 50);
 		
-		n1button.addActionListener(e -> {
+		JButton n1button2 = new JButton("Reset");
+		n1panel.add(n1button2);
+		n1button2.setBounds(400, 340, 150, 50);
+		
+		n1button1.addActionListener(e -> {
 			
 			String grade1 = n1field1.getText();
 			String grade2 = n1field2.getText();
@@ -381,10 +391,258 @@ public class COMPILATION {
 				
 				JOptionPane.showMessageDialog(n1panel, "Average: " + gradeTotal + " FAILED! 5.00");
 			}
-
+		});
+		
+		n1button2.addActionListener(e -> {
+			n1field1.setText("");
+			n1field2.setText("");
+			n1field3.setText("");
+			n1field4.setText("");
+			n1field5.setText("");
+		});
+		
+		//PROGRAM 2
+		
+		JMenuItem n2item = new JMenuItem("Age Checker");
+		nestedIfElse.add(n2item);
+		
+		JPanel n2panel = new JPanel();
+		n2panel.setLayout(null);
+		
+		JLabel n2label = new JLabel("Enter your age here: ");
+		n2panel.add(n2label);
+		n2label.setBounds(80, 30, 150, 100);
+		
+		JTextField n2field = new JTextField("");
+		n2panel.add(n2field);
+		n2field.setBounds(250, 55, 150, 50);
+		
+		JButton n2button = new JButton("Check your Age");
+		n2panel.add(n2button);
+		n2button.setBounds(150, 150, 150, 60);
+		
+		n2button.addActionListener( e -> {
+			String n2string = n2field.getText();
+			
+			if (n2string.trim().isEmpty()) {
+				JOptionPane.showMessageDialog(n2panel, "Please input your age");
+			}
+			
+			int age = Integer.parseInt(n2string);
+			
+			 if (age >= 18) { 
+		            if (age >= 60) { 
+		            	
+		            	JOptionPane.showMessageDialog(n2panel, "You are a Senior"); 
+		                
+		            } else { 
+		            	
+		            	JOptionPane.showMessageDialog(n2panel, "You are an Adult"); 
+		            } 
+		            
+		        } else { 
+		        	
+		            if (age >= 13) { 
+		            	
+		            	JOptionPane.showMessageDialog(n2panel, "You are a Teenager");  
+		            	
+		            } else { 
+		            	
+		            	JOptionPane.showMessageDialog(n2panel, "You are a Child");  
+		            } 
+		        } 
 			
 		});
 		
+		//PROGRAM 3
+		JMenuItem n3item = new JMenuItem("Even, Odd, Negative or Zero");
+		nestedIfElse.add(n3item);
+		
+		JPanel n3panel = new JPanel();
+		n3panel.setLayout(null);
+		
+		JLabel n3label = new JLabel("Enter the number you want to classify here: ");
+		n3panel.add(n3label);
+		n3label.setBounds(80, 75, 250, 100);
+		
+		JTextField n3field = new JTextField("");
+		n3panel.add(n3field);
+		n3field.setBounds(500, 100, 150, 50);
+		
+		JButton n3button1 = new JButton("Classify");
+		n3panel.add(n3button1);
+		n3button1.setBounds(300, 270, 150, 60);
+		
+		JButton n3button2 = new JButton("RESET");
+		n3panel.add(n3button2);
+		n3button2.setBounds(300, 340, 150, 60);
+		
+		n3button1.addActionListener( e -> {
+			String n3string = n3field.getText();
+			
+			if (n3string.trim().isEmpty()) {
+				JOptionPane.showMessageDialog(n3panel, "Please input a number to be classified");
+			}
+			
+			int num = Integer.parseInt(n3string);
+			
+			 if (num > 0) { 
+		            if (num % 2 == 0) { 
+		                JOptionPane.showMessageDialog(n3panel, "Positive even number"); 
+		            } else { 
+		            	JOptionPane.showMessageDialog(n3panel, "Positive odd number"); 
+		            } 
+		        } else { 
+		            if (num < 0) { 
+		            	JOptionPane.showMessageDialog(n3panel, "Negative number"); 
+		            } else { 
+		            	JOptionPane.showMessageDialog(n3panel, "Zero"); 
+		            } 
+		        } 
+		});
+		
+		n3button2.addActionListener(e -> {
+			n3field.setText("");
+		});
+		
+		//PROGRAM 4
+		JMenuItem n4item = new JMenuItem("Simple Log-in System");
+		nestedIfElse.add(n4item);
+		
+		JPanel n4panel = new JPanel();
+		n4panel.setLayout(null);
+		
+		JLabel n4label1 = new JLabel("Username: ");
+		n4panel.add(n4label1);
+		n4label1.setBounds(80, 55, 250, 100);
+		
+		JLabel n4label2 = new JLabel("Password: ");
+		n4panel.add(n4label2);
+		n4label2.setBounds(80, 125, 250, 100);
+		
+		JTextField n4field1 = new JTextField("");
+		n4panel.add(n4field1);
+		n4field1.setBounds(200, 80, 150, 50);
+		
+		JTextField n4field2 = new JTextField("");
+		n4panel.add(n4field2);
+		n4field2.setBounds(200, 150, 150, 50);
+		
+		JButton n4button = new JButton("Log-in");
+		n4panel.add(n4button);
+		n4button.setBounds(300, 270, 150, 60);
+		
+		n4button.addActionListener(e -> {
+			String n4string1 = n4field1.getText();
+			String n4string2 = n4field2.getText();
+			
+			if (n4string1.trim().isEmpty() || n4string1.trim().isEmpty()) {
+				
+				JOptionPane.showMessageDialog(n4panel, "Username and Password required" );
+			} 
+			
+			  if (n4string1.equals("admin")) {
+		            if (n4string2.equals("1234")) { 
+		            	JOptionPane.showMessageDialog(n4panel, "Log-in successful! \nWelcome Administrator!" ); 
+		            } else { 
+		            	JOptionPane.showMessageDialog(n4panel, "Incorrect password" ); 
+		            } 
+		        } else { 
+		        	JOptionPane.showMessageDialog(n4panel, "Incorrect username1" ); 
+		  
+		        } 
+		});
+		
+		//PROGRAM 5
+		JMenuItem n5item = new JMenuItem("BLANK");
+		nestedIfElse.add(n5item);
+		
+		JPanel n5panel = new JPanel();
+		n5panel.setLayout(null);
+		
+		JLabel n5label1 = new JLabel("Select your year here: ");
+		n5panel.add(n5label1);
+		n5label1.setBounds(80, 55, 170, 100);
+		
+		JRadioButton n5rbutton1 = new JRadioButton("1st year");
+		n5panel.add(n5rbutton1);
+		n5rbutton1.setBounds(250, 55, 90, 100);
+		
+		JRadioButton n5rbutton2 = new JRadioButton("2nd year");
+		n5panel.add(n5rbutton2);
+		n5rbutton2.setBounds(350, 55, 90, 100);
+		
+		JRadioButton n5rbutton3 = new JRadioButton("3rd year");
+		n5panel.add(n5rbutton3);
+		n5rbutton3.setBounds(450, 55, 90, 100);
+		
+		JRadioButton n5rbutton4 = new JRadioButton("4th year");
+		n5panel.add(n5rbutton4);
+		n5rbutton4.setBounds(550, 55, 90, 100);
+		
+		JLabel n5label2 = new JLabel("Select your program here: ");
+		n5panel.add(n5label2);
+		n5label2.setBounds(80, 125, 170, 100);
+		
+		JRadioButton n5rbutton5 = new JRadioButton("BS Information Technology");
+		n5panel.add(n5rbutton5);
+		n5rbutton5.setBounds(250, 125, 180, 100);
+		
+		JRadioButton n5rbutton6 = new JRadioButton("BS Computer Science");
+		n5panel.add(n5rbutton6);
+		n5rbutton6.setBounds(450, 125, 160, 100);
+		
+		ButtonGroup Operation1 = new ButtonGroup();
+		
+		Operation1.add(n5rbutton1);
+		Operation1.add(n5rbutton2);
+		Operation1.add(n5rbutton3);
+		Operation1.add(n5rbutton4);
+		
+		ButtonGroup Operation2 = new ButtonGroup();
+		
+		Operation2.add(n5rbutton5);
+		Operation2.add(n5rbutton6);
+		
+		JButton n5button = new JButton("Print");
+		n5panel.add(n5button);
+		n5button.setBounds(300, 270, 150, 60);
+		
+		n5button.addActionListener(e -> {
+			
+			if (n5rbutton1.isSelected()) {
+				if (n5rbutton5.isSelected()) {
+					JOptionPane.showMessageDialog(n5panel, "1st Year: BS Information Technology Student");
+					
+				} else if (n5rbutton6.isSelected()) {
+					JOptionPane.showMessageDialog(n5panel, "1st Year: BS Computer Science Student");
+				}
+			} else if (n5rbutton2.isSelected()) {
+				if (n5rbutton5.isSelected()) {
+					JOptionPane.showMessageDialog(n5panel, "2nd Year: BS Information Technology Student");
+					
+				} else if (n5rbutton6.isSelected()) {
+					JOptionPane.showMessageDialog(n5panel, "2nd Year: BS Computer Science Student");
+				}
+			} else if (n5rbutton3.isSelected()) {
+				if (n5rbutton5.isSelected()) {
+					JOptionPane.showMessageDialog(n5panel, "3rd Year: BS Information Technology Student");
+					
+				} else if (n5rbutton6.isSelected()) {
+					JOptionPane.showMessageDialog(n5panel, "3rd Year: BS Computer Science Student");
+				} 
+			} else if (n5rbutton4.isSelected()) {
+				if (n5rbutton5.isSelected()) {
+					JOptionPane.showMessageDialog(n5panel, "4th Year: BS Information Technology Student");
+					
+				} else if (n5rbutton6.isSelected()) {
+					JOptionPane.showMessageDialog(n5panel, "4th Year: BS Computer Science Student");
+				}
+			}	
+				
+				
+				
+		});
 		
 		//ADDACTIONLISTENER FOR BASIC INPUT & OUTPUT
 		b1item.addActionListener(e -> {
@@ -422,6 +680,30 @@ public class COMPILATION {
 		    frame.setContentPane(n1panel);
 		    frame.revalidate();
 		    frame.repaint();
+		});
+		
+		n2item.addActionListener(e -> {
+			frame.setContentPane(n2panel);
+			frame.revalidate();
+			frame.repaint();
+		});
+		
+		n3item.addActionListener(e -> {
+			frame.setContentPane(n3panel);
+			frame.revalidate();
+			frame.repaint();
+		});
+		
+		n4item.addActionListener(e -> {
+			frame.setContentPane(n4panel);
+			frame.revalidate();
+			frame.repaint();
+		});
+		
+		n5item.addActionListener(e -> {
+			frame.setContentPane(n5panel);
+			frame.revalidate();
+			frame.repaint();
 		});
 		    
 		frame.setVisible(true);
